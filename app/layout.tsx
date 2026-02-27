@@ -24,11 +24,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>
+  <header className="w-full border-b">
+    <nav className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <a href="/" className="font-bold text-lg">TrekTravel</a>
+      <div className="flex gap-4">
+        <a href="/trek" className="hover:underline">Trek</a>
+        <a href="/travel" className="hover:underline">Travel</a>
+        <a href="/plan-your-trip" className="hover:underline font-semibold">Plan Your Trip</a>
+      </div>
+    </nav>
+  </header>
+
+  <main className="mx-auto max-w-6xl px-4 py-10">
+    {children}
+  </main>
+
+  <footer className="w-full border-t">
+    <div className="mx-auto max-w-6xl px-4 py-6 text-sm text-gray-600">
+      © {new Date().getFullYear()} TrekTravel • Built in Phase 0
+    </div>
+  </footer>
+</body>
     </html>
   );
 }
